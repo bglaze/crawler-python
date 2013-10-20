@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+#  An About Dialog for Crawler I
+#  by Brock Glaze
+#
+#  crAbout.py
+
+
+import wx
+from wx.lib.wordwrap import wordwrap
+
+
+def ShowAboutDialog(parent):
+    info = wx.AboutDialogInfo()
+    info.Name = "Crawler I"
+    info.Version = "- v1.0.1"
+    info.Copyright = "(C) 2012 Brock Glaze"
+    info.Description = wordwrap(
+        info.Name + " is a helper application for "
+        "Dungeons and Dragons 3.5 players and DMs.\n\n"
+        "CURRENTLY IN DEVELOPEMENT.\n",
+        350, wx.ClientDC(parent))
+    info.WebSite = ("http://www.bglz.net", "Website for Brock Glaze")
+    info.Developers = ["Brock Glaze"]
+    info.License = wordwrap(licenseText, 550, wx.ClientDC(parent))
+
+    wx.AboutBox(info)
+
+licenseText = '''Copyright (C) 2012 Brock Glaze
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.'''
+
+
+#***********************************************************************
+
+
+if __name__ == '__main__':
+    pass
